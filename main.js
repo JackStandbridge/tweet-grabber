@@ -6,6 +6,10 @@ let form = d.getElementById('js__usernameSelect'),
 
 const fetchTweets = e => {
 	e.preventDefault();
+	if (!input.value.length) {
+		input.focus();
+		return;
+	};
 
 	let list = d.getElementById('js__tweets');
 
@@ -25,8 +29,15 @@ const fetchTweets = e => {
 
 			// add each new tweet as an li to the ul
 			tweets.forEach(tweet => {
-				let li = d.createElement('li');
-				li.textContent = tweet;
+				let li = d.createElement('li'),
+					author = d.createElement('span'),
+					time = d.createElement('time'),
+					body = d.createElement('p');
+				author.textContent = tweet.author;
+				author.classList.add('author');
+				time.textContent = tweet.time;
+				body.textContent = tweet.body;
+				[author, time, body].forEach(element => li.appendChild(element));
 				ul.appendChild(li)
 			});
 
