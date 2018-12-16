@@ -10,7 +10,7 @@ $ pip3 install Flask Flask-Cors beautifulsoup4 requests
 
 Navigate to project directory and then run:
 
-$ FLASK_APP=scrapeTweets.py flask run
+$ flask run
 
 Server will run on http://127.0.0.1:5000/
 
