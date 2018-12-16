@@ -14,7 +14,6 @@ CORS(app)
 def getTweets(username):
 	# accepts a twitter profile name and returns 10 recent tweets
 
-	# this will be returned
 	result = []
 
 	# get the page with requests module
@@ -30,12 +29,10 @@ def getTweets(username):
 	for tweet in tweets:
 		if len(result) >= 10: break
 
-		tweetComponents = {}
-
-		tweetComponents['author'] = tweet.find('strong', {'class': 'fullname'}).text
-		tweetComponents['time'] = tweet.find('span', {'class': '_timestamp'}).text
-		tweetComponents['body'] = tweet.find('p', {'class': 'tweet-text'}).text
-
-		result.append(tweetComponents)
+		result.append({
+			'author': tweet.find('strong', {'class': 'fullname'}).text,
+			'time': tweet.find('span', {'class': '_timestamp'}).text,
+			'body': tweet.find('p', {'class': 'tweet-text'}).text
+		})
 
 	return jsonify(result)
