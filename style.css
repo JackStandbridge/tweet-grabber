@@ -1,0 +1,45 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5rem;
+	font-size: 1.5rem;
+	font-family: sans-serif;
+}
+
+form {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	border: 1px solid lightgrey;
+	padding: .5rem;
+	font-size: inherit;
+	margin: .5rem;
+}
+
+.inputs {
+	display: flex;
+	justify-content: center;
+}
+
+label {
+	display: block;
+	text-align: center;
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+ul {
+	margin: 0;
+}
+
+li {
+	padding: 1rem;
+}
